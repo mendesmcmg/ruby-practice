@@ -1,3 +1,5 @@
+# String introduction
+
 puts "Gimme your first name"
 first = gets.chomp
 puts "Gimme your last name"

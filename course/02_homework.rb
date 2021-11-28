@@ -1,3 +1,5 @@
+# Simple calculator
+
 puts "Simple calculator"
 25.times { print "-" }
 puts "\nGimme the number"

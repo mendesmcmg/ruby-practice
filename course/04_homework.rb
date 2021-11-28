@@ -1,3 +1,5 @@
+# Authenticator
+
 users = [
   { username: "clara", password: "1234"},
   { username: "fred", password: "1111"}, 

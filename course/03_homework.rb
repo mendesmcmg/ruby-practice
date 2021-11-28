@@ -1,3 +1,5 @@
+# Simple calculator with choice of operation
+
 def multiplication(num_1, num_2)
   puts "\nYou chose to multiply\nThe multiplication equals #{num_1 * num_2}"
 end
