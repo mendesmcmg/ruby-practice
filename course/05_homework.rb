@@ -18,7 +18,11 @@ def get_city_names(somehash)
 end
  
 def get_area_code(somehash, key)
-  puts "The area code for #{key} is #{somehash[key]}"
+  if somehash.include?(key)
+    puts "The area code for #{key} is #{somehash[key]}"
+  else
+    puts "Invalid city name"
+  end
 end
  
 loop do
