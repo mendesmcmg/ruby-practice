@@ -1,3 +1,10 @@
+require 'bundler/inline'
+
+gemfile true do
+	source 'https://rubygems.org'
+	gem 'bcrypt'
+end
+
 class Student
   attr_accessor :name, :last_name, :email, :username, :password
 
