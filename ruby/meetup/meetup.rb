@@ -1,11 +1,11 @@
 class Meetup
-def initialize(month, year)
-  @month = month
-  @year = year
-end
+  def initialize(month, year)
+    @month = month
+    @year = year
+  end
 
-def day(:weekday, :order)
+  def day(:weekday, :order)
 
-end
+  end
 
 end
