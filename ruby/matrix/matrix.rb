@@ -10,17 +10,6 @@ class Matrix
   end
 
   def columns
-    @columns = []
-    c = 0
-    for row in rows
-      for cols in row
-        if @columns[c.remainder(row.length)] === nil
-          @columns.append([])
-        end
-        @columns[c.remainder(row.length)].append(cols)
-        c += 1
-      end
-    end
-    @columns
+    @columns = rows.transpose
   end
 end
