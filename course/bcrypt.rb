@@ -6,9 +6,9 @@ gemfile true do
 end
 
 mypassword = BCrypt::Password.create("mypassword")
-puts mypassword.version
-puts mypassword.cost
-puts mypassword.salt
+# puts mypassword.version
+# puts mypassword.cost
+# puts mypassword.salt
 puts mypassword == 'mypassword'
 puts mypassword == 'not my password'
 
