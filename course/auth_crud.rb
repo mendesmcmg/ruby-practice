@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 # module Crud
 module Crud
   require 'bcrypt'
-  puts "Module Crud activated"
+  puts 'Module Crud activated'
 
   def self.create_hash_digest(password)
     BCrypt::Password.create(password)
