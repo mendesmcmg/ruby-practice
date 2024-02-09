@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 class Series
   def initialize(s)
     @s = s
   end
 
   def slices(n)
-    if n > @s.length then raise ArgumentError end
-    
-      limit = (@s.length) - n
+    raise ArgumentError if n > @s.length
+
+    limit = @s.length - n
     resp = []
-    for i in 0..limit
-      resp.append(@s[i..(i+n)-1])
+    (0..limit).each do |i|
+      resp.append(@s[i..(i + n) - 1])
     end
     resp
   end

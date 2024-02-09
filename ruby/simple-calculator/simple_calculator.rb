@@ -1,20 +1,21 @@
-
+# frozen_string_literal: true
 
 class SimpleCalculator
   ALLOWED_OPERATIONS = ['+', '/', '*'].freeze
-  
-  class UnsupportedOperation < StandardError ; end
-  
+
+  class UnsupportedOperation < StandardError; end
+
   def self.calculate(first_operand, second_operand, operation)
     raise UnsupportedOperation unless ALLOWED_OPERATIONS.include?(operation)
-    raise ArgumentError unless (first_operand.is_a? Integer and second_operand.is_a? Integer)
-    return "Division by zero is not allowed." if first_operand == 0 or second_operand == 0
+    raise ArgumentError unless first_operand.is_a?(Integer) && second_operand.is_a?(Integer)
+    return 'Division by zero is not allowed.' if first_operand.zero? || second_operand.zero?
 
-    if operation == '+'
+    case operation
+    when '+'
       addition(first_operand, second_operand)
-    elsif operation == '/'
+    when '/'
       division(first_operand, second_operand)
-    else 
+    else
       multiplication(first_operand, second_operand)
     end
   end
@@ -22,7 +23,7 @@ class SimpleCalculator
   def self.addition(first_operand, second_operand)
     "#{first_operand} + #{second_operand} = #{first_operand + second_operand}"
   end
-  
+
   def self.division(first_operand, second_operand)
     "#{first_operand} / #{second_operand} = #{first_operand / second_operand}"
   end

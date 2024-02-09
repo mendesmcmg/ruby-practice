@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Attendee
   attr_reader :height, :pass_id
 

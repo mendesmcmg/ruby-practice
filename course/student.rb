@@ -1,8 +1,9 @@
 # frozen_string_literal: true
+
 require_relative 'auth_crud'
 
 class Student
-	include Crud
+  include Crud
   attr_accessor :name, :last_name, :email, :username, :password
 
   def initialize(firstname, lastname, username, email, password)

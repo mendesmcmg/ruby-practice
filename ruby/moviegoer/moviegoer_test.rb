@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require_relative 'moviegoer'
 
@@ -19,7 +21,7 @@ class MoviegoerTest < Minitest::Test
   end
 
   def test_members_get_free_popcorn
-    assert_equal "🍿", Moviegoer.new(25, member: true).claim_free_popcorn!
+    assert_equal '🍿', Moviegoer.new(25, member: true).claim_free_popcorn!
   end
 
   def test_regular_moviegoers_dont_get_free_popcorn

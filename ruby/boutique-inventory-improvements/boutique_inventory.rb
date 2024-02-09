@@ -1,10 +1,12 @@
-require "ostruct"
+# frozen_string_literal: true
+
+require 'ostruct'
 
 class BoutiqueInventory
   attr_reader :items
 
   def initialize(items)
-    @items = items.map { |item| OpenStruct.new(item)}
+    @items = items.map { |item| OpenStruct.new(item) }
   end
 
   def item_names
@@ -15,6 +17,5 @@ class BoutiqueInventory
     items.sum do |item|
       item[:quantity_by_size].values.sum
     end
-
   end
 end

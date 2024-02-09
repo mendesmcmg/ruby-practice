@@ -1,24 +1,23 @@
-class Phrase 
+# frozen_string_literal: true
+
+class Phrase
   def initialize(phrase)
     @phrase = phrase
   end
 
   def word_count
     words = {}
-    @phrase.split(/\s|\n|\t|,/).map {
-      |word| 
-      word.delete! " .:,("")!&@$%^&"
+    @phrase.split(/\s|\n|\t|,/).map do |word|
+      word.delete! ' .:,('')!&@$%^&'
       word.downcase!
-      if word[0]=="'" and word[-1]=="'"
-        word.delete! "'"
-      end
-      if words[word] 
+      word.delete! "'" if (word[0] == "'") && (word[-1] == "'")
+      if words[word]
         words[word] += 1
-      else 
+      else
         words[word] = 1
       end
-    } 
-    words.delete("")
+    end
+    words.delete('')
     words
   end
 end

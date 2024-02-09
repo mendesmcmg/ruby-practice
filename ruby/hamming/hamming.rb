@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Hamming
   def self.compute(strand1, strand2)
     length1 = strand1.length

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BirdCount
   def self.last_week
     [0, 2, 5, 3, 7, 8, 4]
@@ -16,10 +18,10 @@ class BirdCount
   end
 
   def busy_days
-    @birds_per_day.count { |element| element >= 5}
+    @birds_per_day.count { |element| element >= 5 }
   end
 
   def day_without_birds?
-    @birds_per_day.any? {|element| element == 0}
+    @birds_per_day.any?(&:zero?)
   end
 end
