@@ -3,6 +3,8 @@
 require 'date'
 
 class Meetup
+  SCHEDULE = %i[first second third fourth].freeze
+
   def initialize(month, year)
     @month = month
     @year = year
@@ -10,18 +12,13 @@ class Meetup
 
   def day(day, descriptor)
     case descriptor
-    when :first
-      first_to_fourth_interval(day, 1)
-    when :second
-      first_to_fourth_interval(day, 2)
-    when :third
-      first_to_fourth_interval(day, 3)
-    when :fourth
-      first_to_fourth_interval(day, 4)
     when :last
       last(day)
     when :teenth
       teenth(day)
+    else
+      week_index = SCHEDULE.index(descriptor)
+      find_date_by_week(day, week_index + 1)
     end
   end
 
@@ -32,9 +29,9 @@ class Meetup
     end
   end
 
-  def first_to_fourth_interval(day, descriptor)
-    first = (descriptor - 1) * 7 + 1
-    last = descriptor * 7
+  def find_date_by_week(day, week_index)
+    first = (week_index - 1) * 7 + 1
+    last = week_index * 7
 
     (first..last).each do |i|
       date = Date.new(@year, @month, i)
